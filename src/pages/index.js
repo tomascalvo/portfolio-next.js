@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme';
 
-import { otrera, bambergaMinerals } from '../projects';
+import projects from '../projects';
 
 import SEO from 'components/seo';
 import Layout from 'components/layout';
@@ -23,14 +23,20 @@ export default function IndexPage() {
           <SEO title="Tomás Calvo" />
           <Banner />
           <FrontendTechnologies />
-          <ProjectSection data={otrera} />
+          <ProjectSection data={projects[0]} />
           <BackendTechnologies />
-          <ProjectSection data={bambergaMinerals} />
+          {
+            projects.slice(1).map((project, i) => ((
+              <ProjectSection key={i} data={project} />
+            )))
+          }
+          {/* <ProjectSection data={bambergaMinerals} />
+          <ProjectSection data={weatherBeach} /> */}
           {/* <SkillFinder />
           <WorkFlow />
           <Package />
           <TeamSection />
-          <TestimonialCard /> */}
+          <TestimonialCard /> */} 
         </Layout>
     </ThemeProvider>
   );

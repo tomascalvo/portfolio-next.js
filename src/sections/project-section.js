@@ -30,6 +30,7 @@ export default function ProjectSection({
   data: {
     title,
     href,
+    imgSrc,
     features,
   }
 }) {
@@ -43,7 +44,7 @@ export default function ProjectSection({
       <Container sx={styles.containerBox}>
         <a href={href}>
           <Box sx={styles.thumbnail}>
-            <Image src={OtreraThumb} alt="Thumbnail" />
+            <Image src={imgSrc} alt={title} />
             {/* <Button
               sx={styles.videoBtn}
               onClick={handleClick}
@@ -53,9 +54,9 @@ export default function ProjectSection({
                 <IoIosPlay />
               </span>
             </Button> */}
-            <Box sx={styles.shapeBox}>
+            {/* <Box sx={styles.shapeBox}>
               <Image src={Blob3} alt="shape" />
-            </Box>
+            </Box> */}
           </Box>
         </a>
         <Box sx={styles.contentBox}>
