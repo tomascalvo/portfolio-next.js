@@ -13,7 +13,7 @@ import bambergaImg from 'assets/bamberga.png';
 import weatherBeachImg from 'assets/weatherBeach.png';
 import covidTrackerImg from 'assets/covidtracker.png';
 import iochatImg from 'assets/iochat.png';
-import virtuImg from 'assets/articlesofvirtu.png';
+// import virtuImg from 'assets/articlesofvirtu.png';
 
 export default [
   {
@@ -121,19 +121,19 @@ export default [
       },
     ]
   },
-  {
-    title: "Virtu Shop",
-    href: "https://articlesofvirtu.netlify.app/",
-    imgSrc: virtuImg,
-    features: [
-      {
-        id: 1,
-        imgSrc: Commercejs,
-        altText: "Commerce.js",
-        title: "Commerce.js",
-        text: "Commerce.js is an API-driven headless commerce infrastructure for developers.",
-      },
-    ]
-  }
+  // {
+  //   title: "Virtu Shop",
+  //   href: "https://articlesofvirtu.netlify.app/",
+  //   imgSrc: virtuImg,
+  //   features: [
+  //     {
+  //       id: 1,
+  //       imgSrc: Commercejs,
+  //       altText: "Commerce.js",
+  //       title: "Commerce.js",
+  //       text: "Commerce.js is an API-driven headless commerce infrastructure for developers.",
+  //     },
+  //   ]
+  // }
 ];
 
