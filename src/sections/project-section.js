@@ -17,9 +17,12 @@ import { IoIosPlay, IoMdHeartEmpty } from "react-icons/io";
 
 import ServiceThumb from "assets/service-thumb.png";
 import shapePattern from "assets/shape-pattern1.png";
-import HoneyThumb from 'assets/honey-thumb.jpg';
-import OtreraThumb from 'assets/otrera-performance-light.png';
-import Blob3 from 'assets/blob3.png';
+import HoneyThumb from "assets/honey-thumb.jpg";
+import OtreraThumb from "assets/otrera-performance-light.png";
+
+import Blob1 from "assets/blob1.svg";
+import Blob2 from "assets/blob2.svg";
+import Blob3 from "assets/blob3.svg";
 
 import Smart from "assets/services/smart.svg";
 import Secure from "assets/services/secure.svg";
@@ -27,24 +30,31 @@ import Commercejs from "assets/services/commercejs-logo.jpg";
 import Google from "assets/services/google-logo.png";
 
 export default function ProjectSection({
-  data: {
-    title,
-    href,
-    imgSrc,
-    features,
-  }
+  data: { title, href, imgSrc, features },
+  projectIndex,
 }) {
   const [videoOpen, setVideoOpen] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
   };
+  const blobs = [Blob1, Blob2, Blob3];
   return (
-    <section id='projects' sx={{ variant: "section.services" }}>
+    <section id="projects" sx={{ variant: "section.services" }}>
       <Container sx={styles.containerBox}>
-        <a href={href}>
-          <Box sx={styles.thumbnail}>
-            <Image src={imgSrc} alt={title} />
+        <Box sx={{...styles.thumbnail, display: !imgSrc ? "none" : "inline-flex" }}>
+          <a href={href}>
+            {!imgSrc ? (
+              <Image
+                src={blobs[projectIndex % 3]}
+                alt={"Project in development"}
+                sx={styles.projectImageDefault}
+              />
+            ) : (
+              <Image src={imgSrc} alt={title} />
+            )}
+            {/* <Image src={Blob3} alt={"Project in development"} />
+            <Image src={imgSrc} alt={title} /> */}
             {/* <Button
               sx={styles.videoBtn}
               onClick={handleClick}
@@ -57,8 +67,8 @@ export default function ProjectSection({
             {/* <Box sx={styles.shapeBox}>
               <Image src={Blob3} alt="shape" />
             </Box> */}
-          </Box>
-        </a>
+          </a>
+        </Box>
         <Box sx={styles.contentBox}>
           <a href={href} sx={styles.anchor}>
             <TextFeature subTitle={"Project"} title={title} />
@@ -72,12 +82,8 @@ export default function ProjectSection({
                   sx={styles.icon}
                 />
                 <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}>
-                    {feature.title}
-                  </Heading>
-                  <Text sx={styles.wrapper.subtitle}>
-                    {feature.text}
-                  </Text>
+                  <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
+                  <Text sx={styles.wrapper.subtitle}>{feature.text}</Text>
                 </Box>
               </Box>
             ))}
@@ -108,7 +114,16 @@ const playPluse = keyframes`
 
 const styles = {
   anchor: {
-    textDecoration: 'none',
+    textDecoration: "none",
+    // margin: ["20px", "20px", "20px", "inherit", "inherit", "inherit"],
+    // border: [
+    //   "1px solid red",
+    //   "1px solid orange",
+    //   "1px solid yellow",
+    //   "1px solid green",
+    //   "1px solid blue",
+    //   "1px solid violet",
+    // ],
   },
   coreFeature: {
     py: [0, null, null, 2, null, 7],

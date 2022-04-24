@@ -2,6 +2,8 @@
 import { jsx } from 'theme-ui';
 import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
 import BannerImg from 'assets/otrera-dashboard-light.png';
+import BannerImg2 from 'assets/strength-dash-gradient-light.png';
+
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
 import Blob1 from 'assets/blob1.svg';
@@ -23,7 +25,7 @@ export default function Banner() {
           </Button> */}
         </Box>
         <Box sx={styles.banner.imageBox}>
-          <Image src={BannerImg} alt='banner'/>
+          <Image src={BannerImg2} alt='banner'/>
         </Box>
       </Container>
     </section>
@@ -82,6 +84,7 @@ const styles = {
       img: {
         position: 'relative',
         height: [245, 'auto'],
+        objectFit: "cover"
       },
     },
   },

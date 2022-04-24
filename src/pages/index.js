@@ -27,7 +27,7 @@ export default function IndexPage() {
           <BackendTechnologies />
           {
             projects.slice(1).map((project, i) => ((
-              <ProjectSection key={i} data={project} />
+              <ProjectSection key={i} data={project} projectIndex={i} />
             )))
           }
           {/* <ProjectSection data={bambergaMinerals} />
